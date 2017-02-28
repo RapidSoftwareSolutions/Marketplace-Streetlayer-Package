@@ -1,0 +1,150 @@
+{
+  "package": "Streetlayer",
+  "tagline": "Streetlayer API",
+  "description": "Streetlayer",
+  "image": "http:\/\/logo.clearbit.com\/streetlayer.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-https://streetlayer.com-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "streetlayer.com",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "validateAddress",
+      "description": "Verify the provided address",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Streetlayer",
+          "required": true
+        },
+        {
+          "name": "address1",
+          "type": "String",
+          "info": "The first part of the address to be validated. Ideally, this should contain street name and housenumber only.",
+          "required": true
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "The country value of the address to be validated.",
+          "required": true
+        },
+        {
+          "name": "city",
+          "type": "String",
+          "info": "The city value of the address to be validated.",
+          "required": true
+        },
+        {
+          "name": "address2",
+          "type": "String",
+          "info": "Additional address parts which that be appended to the final address. In order to achieve the highest possible level of validation, flat numbers, building numbers, housenumber details like 'A', names and similar parts should be passed into this request parameter.",
+          "required": false
+        },
+        {
+          "name": "address3",
+          "type": "String",
+          "info": "Additional address parts which that be appended to the final address. In order to achieve the highest possible level of validation, flat numbers, building numbers, housenumber details like 'A', names and similar parts should be passed into this request parameter.",
+          "required": false
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "The postal code value of the address to be validated.",
+          "required": false
+        },
+        {
+          "name": "county",
+          "type": "String",
+          "info": "Counties are administrative divisions between localities (in most cases, cities) and regions (in most cases, states).",
+          "required": false
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Usually the first-level administrative divisions within countries, equivalent to states and provinces in the U.S. and Canada. However, most other countries contain regions as well.",
+          "required": false
+        }
+
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAddressFromCoordinates",
+      "description": "Lookup of the nearest addresses based on coordinates.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Streetlayer",
+          "required": true
+        },
+        {
+          "name": "latitude",
+          "type": "String",
+          "info": "Latitude of the address",
+          "required": true
+        },
+        {
+          "name": "longitude",
+          "type": "String",
+          "info": "Longitude of the address",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "autocompleteAddress",
+      "description": "Verify the provided address",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Streetlayer",
+          "required": true
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "The address to be autocompleted in freeform text.",
+          "required": true
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "The country in which the API should search for the given address.",
+          "required": true
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "Specifying this parameter will restrict autocomplete suggestions to the postal code provided.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }
+  ]
+}
