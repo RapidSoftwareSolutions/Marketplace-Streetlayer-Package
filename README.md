@@ -1,4 +1,4 @@
-[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Streetlayer/functions?utm_source=RapidAPIGitHub_StreetlayerFunctions&utm_medium=button&utm_content=RapidAPI_GitHub) 
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Streetlayer/functions?utm_source=RapidAPIGitHub_StreetlayerFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
 # Streetlayer Package
 Streetlayer
@@ -43,4 +43,13 @@ Verify the provided address
 | text       | String     | The address to be autocompleted in freeform text.
 | countryCode| String     | The country in which the API should search for the given address.
 | postalCode | String     | Specifying this parameter will restrict autocomplete suggestions to the postal code provided.
+
+## Streetlayer.validateAddressByText
+Verify the provided address
+
+| Field      | Type       | Description
+|------------|------------|----------
+| apiKey     | credentials| Api key obtained from Streetlayer
+| text       | String     | The address to be validated in freeform text.
+| countryCode| String     | The country in which the API should search for the given address.
 

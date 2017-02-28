@@ -1,5 +1,6 @@
        <?php
        $routes = [
+       'validateAddressByText',
        'autocompleteAddress',
        'getAddressFromCoordinates',
        'validateAddress',

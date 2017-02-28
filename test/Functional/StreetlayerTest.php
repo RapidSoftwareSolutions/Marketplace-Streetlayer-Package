@@ -8,6 +8,7 @@ class StreetlayerTest extends BaseTestCase {
     public function testListMetrics() {
 
         $routes = [
+            'validateAddressByText',
             'autocompleteAddress',
             'getAddressFromCoordinates',
             'validateAddress'

@@ -146,5 +146,36 @@
         }
       ]
     }
+    ,
+    {
+      "name": "validateAddressByText",
+      "description": "Verify the provided address",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Streetlayer",
+          "required": true
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "info": "The address to be validated in freeform text.",
+          "required": true
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "The country in which the API should search for the given address.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }
   ]
 }
