@@ -8,7 +8,8 @@ Streetlayer
 ## How to get credentials: 
 0. Go to [Streetlayer website](https://streetlayer.com) 
 1. Log in or create a new account
-2. Go to [Dashboard page](https://streetlayer.com/dashboard) to get your API key
+2. Go to [Dashboard page](https://streetlayer.com/dashboard) to get your API key.
+
 ## Streetlayer.validateAddress
 Verify the provided address
 
