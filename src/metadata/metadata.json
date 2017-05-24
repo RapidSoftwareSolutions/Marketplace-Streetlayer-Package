@@ -92,15 +92,9 @@
           "required": true
         },
         {
-          "name": "latitude",
-          "type": "String",
-          "info": "Latitude of the address",
-          "required": true
-        },
-        {
-          "name": "longitude",
-          "type": "String",
-          "info": "Longitude of the address",
+          "name": "coordinates",
+          "type": "Map",
+          "info": "Latitude and longitude of the address coma separated",
           "required": true
         }
       ],

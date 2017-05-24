@@ -28,11 +28,10 @@ Verify the provided address
 ## Streetlayer.getAddressFromCoordinates
 Lookup of the nearest addresses based on coordinates.
 
-| Field    | Type       | Description
-|----------|------------|----------
-| apiKey   | credentials| Api key obtained from Streetlayer
-| latitude | String     | Latitude of the address
-| longitude| String     | Longitude of the address
+| Field       | Type       | Description
+|-------------|------------|----------
+| apiKey      | credentials| Api key obtained from Streetlayer
+| coordinates | String     | Latitude and longitude of the address coma separated
 
 ## Streetlayer.autocompleteAddress
 Verify the provided address

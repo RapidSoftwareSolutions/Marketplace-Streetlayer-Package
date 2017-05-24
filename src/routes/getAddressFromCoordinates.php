@@ -14,8 +14,13 @@ $app->post('/api/Streetlayer/getAddressFromCoordinates', function ($request, $re
     $query_str = $settings['api_url'] . "reverse";
     $body = array();
     $body['access_key'] = $post_data['args']['apiKey'];
-    $body['latitude'] = $post_data['args']['latitude'];
-    $body['longitude'] = $post_data['args']['longitude'];
+    if (isset($post_data['args']['coordinates']) && strlen($post_data['args']['coordinates']) > 0) {
+        $body['latitude'] = explode(',', $post_data['args']['coordinates'])[0];
+        $body['longitude'] = explode(',', $post_data['args']['coordinates'])[1];
+    } else {
+        $body['latitude'] = $post_data['args']['latitude'];
+        $body['longitude'] = $post_data['args']['longitude'];
+    }
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
