@@ -4,7 +4,7 @@ $app->post('/api/Streetlayer/getAddressFromCoordinates', function ($request, $re
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey', 'latitude', 'longitude']);
+    $validateRes = $checkRequest->validate($request, ['apiKey']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -17,9 +17,15 @@ $app->post('/api/Streetlayer/getAddressFromCoordinates', function ($request, $re
     if (isset($post_data['args']['coordinates']) && strlen($post_data['args']['coordinates']) > 0) {
         $body['latitude'] = explode(',', $post_data['args']['coordinates'])[0];
         $body['longitude'] = explode(',', $post_data['args']['coordinates'])[1];
-    } else {
+    } elseif (isset($post_data['args']['latitude']) && isset($post_data['args']['longitude'])) {
         $body['latitude'] = $post_data['args']['latitude'];
         $body['longitude'] = $post_data['args']['longitude'];
+    } else {
+        $result['callback'] = 'error';
+        $result['contextWrites']['to']['status_code'] = "REQUIRED_FIELDS";
+        $result['contextWrites']['to']['status_msg'] = "Please, check and fill in required fields.";
+        $result['contextWrites']['to']['fields'] = 'coordinates';
+        return $result;
     }
 
     //requesting remote API
